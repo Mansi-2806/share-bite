@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MapPin, Heart } from "lucide-react";
+import { MapPin, Heart, Users, Star } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -23,23 +23,35 @@ const Navbar = () => {
         </div>
 
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/donate" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium">Donate Food</Link>
-          <Link to="/food-banks" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium">Find Food Banks</Link>
-          <Link to="/volunteer" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium">Volunteer</Link>
-          <Link to="/track" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium">Track & Rewards</Link>
+          <Link to="/donate" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+            <Heart size={16} />
+            Donate Food
+          </Link>
+          <Link to="/food-banks" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+            <MapPin size={16} />
+            Find Food Banks
+          </Link>
+          <Link to="/volunteer" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+            <Users size={16} />
+            Volunteer
+          </Link>
+          <Link to="/track" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+            <Star size={16} />
+            Track & Rewards
+          </Link>
         </nav>
 
         <div className="flex items-center space-x-3">
-          <Button variant="ghost" size="sm" className="hidden md:flex items-center gap-1 text-sharebite-primary" asChild>
+          <Button variant="outline" size="sm" className="hidden md:flex items-center gap-1 text-sharebite-primary" asChild>
             <Link to="/food-banks">
               <MapPin size={16} />
-              <span>Find Foodbanks</span>
+              Find Foodbanks
             </Link>
           </Button>
           <Button className="bg-sharebite-primary hover:bg-sharebite-primary/90" asChild>
             <Link to="/donate">
               <Heart size={16} className="mr-2" />
-              <span>Donate Now</span>
+              Donate Now
             </Link>
           </Button>
         </div>
