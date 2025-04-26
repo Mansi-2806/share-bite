@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -18,11 +19,15 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="bg-sharebite-primary hover:bg-sharebite-primary/90">
-              Donate Surplus Food
+            <Button size="lg" className="bg-sharebite-primary hover:bg-sharebite-primary/90" asChild>
+              <Link to="/donate">
+                Donate Surplus Food
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-sharebite-secondary text-sharebite-secondary hover:bg-sharebite-secondary hover:text-white">
-              Become a Volunteer
+            <Button size="lg" variant="outline" className="border-sharebite-secondary text-sharebite-secondary hover:bg-sharebite-secondary hover:text-white" asChild>
+              <Link to="/volunteer">
+                Become a Volunteer
+              </Link>
             </Button>
           </div>
           
