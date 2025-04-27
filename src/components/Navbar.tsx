@@ -35,9 +35,9 @@ const Navbar = () => {
             <Users size={16} />
             Volunteer
           </Link>
-          <Link to="/track" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+          <Link to="/rewards" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
             <Star size={16} />
-            Track & Rewards
+            View Rewards
           </Link>
         </nav>
 

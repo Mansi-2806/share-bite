@@ -9,6 +9,7 @@ import DonationPage from "./pages/DonationPage";
 import FoodBanksPage from "./pages/FoodBanksPage";
 import VolunteerPage from "./pages/VolunteerPage";
 import TrackingPage from "./pages/TrackingPage";
+import RewardsPage from "./pages/RewardsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/food-banks" element={<FoodBanksPage />} />
           <Route path="/volunteer" element={<VolunteerPage />} />
           <Route path="/track" element={<TrackingPage />} />
+          <Route path="/rewards" element={<RewardsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
