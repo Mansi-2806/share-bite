@@ -21,18 +21,10 @@ const Navbar = () => {
           </div>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8 ml-auto">
           <Link to="/" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
             <Home size={16} />
             Home
-          </Link>
-          <Link to="/donate" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
-            <Heart size={16} />
-            Donate Food
-          </Link>
-          <Link to="/food-banks" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
-            <MapPin size={16} />
-            Find Food Banks
           </Link>
           <Link to="/volunteer" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
             <Users size={16} />
@@ -53,3 +45,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
