@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Heart, Users, Dog } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
 
 const AboutUs = () => {
   return (
@@ -170,7 +171,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gradient-to-br from-purple-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -190,12 +191,14 @@ const AboutUs = () => {
                 {
                   name: "Mansi",
                   role: "Founder & Operations Director",
-                  description: "Leading our mission to create sustainable food distribution networks."
+                  description: "Leading our mission to create sustainable food distribution networks and ensuring both people and animals receive the nourishment they deserve.",
+                  image: "/lovable-uploads/440ba46d-5484-4ab5-b48a-eabd97fcadaa.png"
                 },
                 {
                   name: "Kalyani Vilas Birajdar",
                   role: "Program Coordinator",
-                  description: "Managing our volunteer programs and community partnerships."
+                  description: "Managing our volunteer programs and community partnerships while developing innovative solutions for food distribution challenges.",
+                  image: "/lovable-uploads/c5b4b344-56c3-49fe-9bb0-b9b02dc1565e.png"
                 }
               ].map((member, index) => (
                 <motion.div
@@ -207,8 +210,19 @@ const AboutUs = () => {
                 >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                      <p className="text-sharebite-primary font-medium mb-3">{member.role}</p>
+                      <div className="flex items-center gap-4 mb-4">
+                        <Avatar className="w-24 h-24">
+                          <AvatarImage
+                            src={member.image}
+                            alt={member.name}
+                            className="object-cover"
+                          />
+                        </Avatar>
+                        <div>
+                          <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                          <p className="text-sharebite-primary font-medium">{member.role}</p>
+                        </div>
+                      </div>
                       <p className="text-gray-600">{member.description}</p>
                     </CardContent>
                   </Card>
