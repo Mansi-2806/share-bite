@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
-import { MapPin, Heart, Users, Star, Home } from "lucide-react";
+import { Info, Home, Users, Star } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -26,6 +26,10 @@ const Navbar = () => {
             <Home size={16} />
             Home
           </Link>
+          <Link to="/about" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
+            <Info size={16} />
+            About Us
+          </Link>
           <Link to="/volunteer" className="text-sharebite-dark hover:text-sharebite-primary transition-colors font-medium flex items-center gap-2">
             <Users size={16} />
             Volunteer
@@ -45,4 +49,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
