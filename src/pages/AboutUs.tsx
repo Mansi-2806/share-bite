@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Heart, Users, Dog } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 
@@ -186,19 +185,19 @@ const AboutUs = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
                 {
                   name: "Mansi",
-                  role: "Founder & Operations Director",
-                  description: "Leading our mission to create sustainable food distribution networks and ensuring both people and animals receive the nourishment they deserve.",
+                  image: "/lovable-uploads/c5b4b344-56c3-49fe-9bb0-b9b02dc1565e.png"
+                },
+                {
+                  name: "Kalyani Birajdar",
                   image: "/lovable-uploads/440ba46d-5484-4ab5-b48a-eabd97fcadaa.png"
                 },
                 {
-                  name: "Kalyani Vilas Birajdar",
-                  role: "Program Coordinator",
-                  description: "Managing our volunteer programs and community partnerships while developing innovative solutions for food distribution challenges.",
-                  image: "/lovable-uploads/c5b4b344-56c3-49fe-9bb0-b9b02dc1565e.png"
+                  name: "Aman R Jain",
+                  image: "/lovable-uploads/240365cf-88ca-438e-9e77-21ac7865ec27.png"
                 }
               ].map((member, index) => (
                 <motion.div
@@ -210,7 +209,7 @@ const AboutUs = () => {
                 >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-6">
-                      <div className="flex items-center gap-4 mb-4">
+                      <div className="flex flex-col items-center gap-4">
                         <Avatar className="w-24 h-24">
                           <AvatarImage
                             src={member.image}
@@ -218,12 +217,8 @@ const AboutUs = () => {
                             className="object-cover"
                           />
                         </Avatar>
-                        <div>
-                          <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                          <p className="text-sharebite-primary font-medium">{member.role}</p>
-                        </div>
+                        <h3 className="text-xl font-semibold">{member.name}</h3>
                       </div>
-                      <p className="text-gray-600">{member.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
