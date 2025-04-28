@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -11,7 +10,6 @@ const AboutUs = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow mt-20">
-        {/* Hero Section with Overview */}
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +56,6 @@ const AboutUs = () => {
           </div>
         </motion.section>
 
-        {/* Mission Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -68,13 +65,24 @@ const AboutUs = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-bold mb-6 text-sharebite-dark">Our Mission</h2>
+                <h2 className="text-3xl font-bold mb-6 text-sharebite-dark">Our Mission & Process</h2>
                 <p className="text-gray-600 mb-4">
-                  Share Bite was founded with a simple yet powerful vision: to create a world where no pet goes hungry while perfectly good food goes to waste.
+                  Our human food bank operates through a systematic process to ensure efficient food distribution:
                 </p>
-                <p className="text-gray-600 mb-4">
-                  We connect surplus pet food from retailers and manufacturers with animal shelters and rescue organizations that need it most.
-                </p>
+                <ul className="space-y-4 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="font-semibold min-w-[120px]">Collection:</span>
+                    We partner with local grocery stores, restaurants, and food manufacturers to collect surplus food that would otherwise go to waste.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-semibold min-w-[120px]">Sorting:</span>
+                    Our volunteers carefully sort and inspect all donations to ensure food safety and quality standards are met.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-semibold min-w-[120px]">Distribution:</span>
+                    We distribute food through our network of community centers and partner organizations to reach families in need.
+                  </li>
+                </ul>
                 <div className="flex gap-6 mt-8">
                   <div className="flex items-center gap-2">
                     <Heart className="text-sharebite-primary" />
@@ -95,7 +103,7 @@ const AboutUs = () => {
               >
                 <img 
                   src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1"
-                  alt="Cute kitten being fed"
+                  alt="Food distribution center"
                   className="w-full h-[400px] object-cover"
                 />
               </motion.div>
@@ -103,7 +111,6 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Animal Food Bank Section */}
         <section className="py-16 bg-gradient-to-br from-purple-50 to-white">
           <div className="container mx-auto px-4">
             <motion.div
@@ -155,6 +162,54 @@ const AboutUs = () => {
                     <CardContent className="p-6">
                       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold mb-6 text-sharebite-dark">Our Team</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Meet the dedicated individuals behind Share Bite who work tirelessly to make our mission possible.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {[
+                {
+                  name: "Mansi",
+                  role: "Founder & Operations Director",
+                  description: "Leading our mission to create sustainable food distribution networks."
+                },
+                {
+                  name: "Kalyani Vilas Birajdar",
+                  role: "Program Coordinator",
+                  description: "Managing our volunteer programs and community partnerships."
+                }
+              ].map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                      <p className="text-sharebite-primary font-medium mb-3">{member.role}</p>
+                      <p className="text-gray-600">{member.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
