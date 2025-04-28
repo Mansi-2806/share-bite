@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow mt-20">
-        {/* Hero Section */}
+        {/* Hero Section with Overview */}
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -19,13 +19,41 @@ const AboutUs = () => {
           className="relative py-16 bg-gradient-to-br from-white to-purple-50"
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-sharebite-dark mb-6">
                 About Share Bite
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                We're on a mission to eliminate food waste and ensure every animal gets the nourishment they deserve.
+                We're a comprehensive food distribution network focused on two crucial missions: eliminating food waste 
+                and ensuring both people and animals receive the nourishment they deserve.
               </p>
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="bg-white p-6 rounded-lg shadow-md"
+                >
+                  <h3 className="text-xl font-semibold mb-4 text-sharebite-primary">Human Food Bank</h3>
+                  <p className="text-gray-600">
+                    Our community food bank provides essential nutrition to families in need, 
+                    while working with local grocers and restaurants to prevent food waste and 
+                    create sustainable food distribution channels.
+                  </p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="bg-white p-6 rounded-lg shadow-md"
+                >
+                  <h3 className="text-xl font-semibold mb-4 text-sharebite-primary">Animal Food Bank</h3>
+                  <p className="text-gray-600">
+                    Our dedicated animal food bank ensures that shelters, rescues, and pet owners in need 
+                    have access to quality pet food, reducing the burden on families and improving animal welfare.
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </motion.section>
