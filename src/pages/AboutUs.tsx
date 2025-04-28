@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Paw, Heart, Users } from 'lucide-react';
+import { Heart, Users, Dog } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutUs = () => {
