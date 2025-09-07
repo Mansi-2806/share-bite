@@ -1,9 +1,17 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Info, Home, Users, Star } from "lucide-react";
+import { Info, Home, Users, Star, LogIn, LogOut, User } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = () => {
+    signOut();
+  };
+
   return (
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
@@ -42,6 +50,31 @@ const Navbar = () => {
             <Star size={16} />
             View Rewards
           </Link>
+          
+          {user ? (
+            <div className="flex items-center space-x-4">
+              <span className="text-sharebite-dark font-medium flex items-center gap-2">
+                <User size={16} />
+                {user.email}
+              </span>
+              <Button 
+                onClick={handleSignOut}
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2"
+              >
+                <LogOut size={16} />
+                Sign Out
+              </Button>
+            </div>
+          ) : (
+            <Link to="/auth">
+              <Button variant="default" size="sm" className="flex items-center gap-2">
+                <LogIn size={16} />
+                Sign In
+              </Button>
+            </Link>
+          )}
         </nav>
       </div>
     </header>
